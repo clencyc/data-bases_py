@@ -29,3 +29,19 @@ class Student(Model):
 
 
 Student.create_table(fail_silently=True)
+
+
+class People(Model):
+    person_name = CharField()
+    person_phonenumber = CharField(unique=True)
+    person_email = CharField(unique=True)
+    person_county = CharField()
+    person_gender = CharField()
+    person_religion = CharField()
+    person_password = CharField()
+
+    class Meta:
+        database = db
+
+
+People.create_table(fail_silently=True)
